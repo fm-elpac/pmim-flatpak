@@ -85,6 +85,7 @@ modules:
 
       # pmim-ibus
       - type: git
+        dest: pmim-ibus
         url: https://github.com/fm-elpac/pmim-ibus
         tag: v0.1.0
         commit: b16fc7e4b3e7fb777983cdbe124acb1cf6342791
