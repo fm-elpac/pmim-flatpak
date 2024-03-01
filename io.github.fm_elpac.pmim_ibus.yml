@@ -78,7 +78,7 @@ modules:
       - type: script
         dest-filename: run.sh
         commands:
-          - env PMIMS_DB=${XDG_CONFIG_HOME}/pmim zypak-wrapper.sh /app/electron-dist/electron /app/main/main.js "$@"
+          - env PMIMS_DB=${XDG_CONFIG_HOME}/pmim zypak-wrapper.sh /app/dist-electron/electron /app/main/main.js "$@"
 
       # pmim-ibus
       - type: git
