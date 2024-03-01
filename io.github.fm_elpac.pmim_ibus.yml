@@ -21,7 +21,6 @@ finish-args:
   - --share=network
   - --device=dri
   - --filesystem=xdg-run/pmim:create
-  - --filesystem=xdg-config/pmim:create
 
 modules:
   - name: pmim-ibus
@@ -58,6 +57,8 @@ modules:
       - install -Dm755 -t /app/bin/ dist-deno/deno
       - install -Dm755 -t /app/bin/ dist-librush/release/ibrus
 
+      - cp pmim-ibus/ibus_component/pmim_ibrus.xml /app
+
       # /app/main *.js
       - mkdir -p /app/main
       - cp pmim-ibus/electronjs/*.js /app/main
@@ -77,14 +78,14 @@ modules:
       - type: script
         dest-filename: run.sh
         commands:
-          - zypak-wrapper.sh /app/dist-electron/electron /app/main/main.js "$@"
+          - env PMIMS_DB=${XDG_CONFIG_HOME}/pmim zypak-wrapper.sh /app/electron-dist/electron /app/main/main.js "$@"
 
       # pmim-ibus
       - type: git
         dest: pmim-ibus
         url: https://github.com/fm-elpac/pmim-ibus
-        tag: v0.1.0
-        commit: b16fc7e4b3e7fb777983cdbe124acb1cf6342791
+        tag: v0.1.1
+        commit: 9033daa9541a615a22765b71cca9edb3e71da144
 
       # pmim-ibus/ui-vue-dist
       - type: archive
