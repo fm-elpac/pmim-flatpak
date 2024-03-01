@@ -35,19 +35,12 @@ modules:
       # DEBUG
       - pwd
       - ls -l
-      - echo DEBUG::pmim-ibus
       - ls -l pmim-ibus
-      - echo DEBUG::ui
-      - ls -l ui
-      - echo DEBUG::server
+      - ls -l ui/dist
       - ls -l server
-      - echo DEBUG::dist-deno
       - ls -l dist-deno
-      - echo DEBUG::dist-electron
       - ls -l dist-electron
-      - echo DEBUG::dist-librush
       - ls -l dist-librush
-      - echo DEBUG end
       #- ls -l pmim-data
 
       # files for desktop app
@@ -63,19 +56,22 @@ modules:
       - install -Dm755 -t /app/bin/ pmim-ibus/flatpak/restart.sh
 
       - install -Dm755 -t /app/bin/ dist-deno/deno
-      - install -Dm755 -t /app/bin/ dist-librush/target/release/ibrus
+      - install -Dm755 -t /app/bin/ dist-librush/release/ibrus
 
       # /app/main *.js
       - mkdir -p /app/main
       - cp pmim-ibus/electronjs/*.js /app/main
 
       # pmim-server
-      - cp -r server/server /app/
+      - cp -r server /app/
       # ui-vue-dist
-      - cp -r ui/* /app/server/static/
+      - cp -r ui/dist/* /app/server/static/
 
       # electron dist
       - cp -r dist-electron /app
+
+      # DEBUG
+      - find /app
 
     sources:
       - type: script
