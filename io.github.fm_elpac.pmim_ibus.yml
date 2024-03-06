@@ -95,14 +95,14 @@ modules:
       - type: git
         dest: pmim-ibus
         url: https://github.com/fm-elpac/pmim-ibus
-        tag: v0.1.1
-        commit: 9033daa9541a615a22765b71cca9edb3e71da144
+        tag: v0.1.2
+        commit: 47cd7dc5097f19b040a1aeea0e695bdaa0c21ac1
 
       # pmim-ibus/ui-vue-dist
       - type: archive
         dest: ui
-        url: https://github.com/fm-elpac/pmim-ibus/releases/download/v0.1.0/ui-vue-dist.tar.zst
-        sha256: 4fdaafb499f855f9d4646ad2202ba5cc1041677bb65d18c7381f2b0ef5a5632d
+        url: https://github.com/fm-elpac/pmim-ibus/releases/download/v0.1.2/ui-vue-dist.tar.zst
+        sha256: 8e7a0ebf61f1e35eb8163e4324d4b31db46b84835c9695ff85da2bd8b4a2964e
 
       # pmim-server
       - type: archive
