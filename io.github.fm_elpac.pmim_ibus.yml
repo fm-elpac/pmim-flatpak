@@ -95,8 +95,8 @@ modules:
       - type: git
         dest: pmim-ibus
         url: https://github.com/fm-elpac/pmim-ibus
-        tag: v0.1.2
-        commit: 47cd7dc5097f19b040a1aeea0e695bdaa0c21ac1
+        tag: v0.1.3
+        commit: d3cee8a424f71ebe74228395aa97b2b4f3c5ea74
 
       # pmim-ibus/ui-vue-dist
       - type: archive
