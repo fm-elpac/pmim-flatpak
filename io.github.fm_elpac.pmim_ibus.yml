@@ -64,6 +64,9 @@ modules:
       - cp -r server /app/
       # ui-vue-dist
       - cp -r ui/dist/* /app/server/static/
+      # plugin
+      - mkdir -p /app/server/plugin
+      - cp -r plugin/* /app/server/plugin
 
       # electron dist
       - mkdir -p /app/dist-electron
@@ -82,26 +85,31 @@ modules:
       - type: script
         dest-filename: run.sh
         commands:
-          - env PMIMS_DB=${XDG_CONFIG_HOME}/pmim zypak-wrapper.sh /app/dist-electron/electron /app/main/main.js "$@"
+          - env PMIMS_DB=${XDG_CONFIG_HOME}/pmim PMIMS_PLUGIN=${XDG_CONFIG_HOME}/pmim/plugin zypak-wrapper.sh /app/dist-electron/electron /app/main/main.js "$@"
 
       # pmim-ibus
       - type: git
         dest: pmim-ibus
         url: https://github.com/fm-elpac/pmim-ibus
-        tag: v0.1.6
-        commit: 68e4afef68f6db49a58c8deda9311664732df184
+        tag: v0.1.7
+        commit: 3a3374f0d1dc064b28ce13007dce073dd5164a16
 
       # pmim-ibus/ui-vue-dist
       - type: archive
         dest: ui
-        url: https://github.com/fm-elpac/pmim-ibus/releases/download/v0.1.6/ui-vue-dist.tar.zst
-        sha256: c6e44c29cdd53ff41810f70ebc807daa36b3324618d89f8e8d23b6c6cd20c6e4
+        url: https://github.com/fm-elpac/pmim-ibus/releases/download/v0.1.7/ui-vue-dist.tar.zst
+        sha256: c9cc92e0d1bce986fc19c16a42bc3d5096df53ff8478c048f495b02431ebc68a
+      # pmim-ibus/pmim-plugin
+      - type: archive
+        dest: plugin
+        url: https://github.com/fm-elpac/pmim-ibus/releases/download/v0.1.7/pmim-plugin.tar.zst
+        sha256: 5177b545826225771a72e7d41186ba19790b92a5bd7d42f3c324033de77efef9
 
       # pmim-server
       - type: archive
         dest: server
-        url: https://github.com/fm-elpac/pmim/releases/download/v0.1.3/pmim-server.tar.zst
-        sha256: ecc8697cd1a60476ba6e3d1a454b584854aee3e78b22c2699eb6843f6b035e70
+        url: https://github.com/fm-elpac/pmim/releases/download/v0.1.4/pmim-server.tar.zst
+        sha256: 58acd5f89f161ce003f3ed61cf94483d16aba24da15df6a96135a976b024f718
 
       # deno
       - type: archive
