@@ -91,19 +91,19 @@ modules:
       - type: git
         dest: pmim-ibus
         url: https://github.com/fm-elpac/pmim-ibus
-        tag: v0.1.9
-        commit: 64202363a540d1da8921eaa874e611d3f4353037
+        tag: v0.1.10
+        commit: ee2de15ef8ee6a2812b2dc0503eb5e73cb6d006e
 
       # pmim-ibus/ui-vue-dist
       - type: archive
         dest: ui
-        url: https://github.com/fm-elpac/pmim-ibus/releases/download/v0.1.9/ui-vue-dist.tar.zst
-        sha256: c32d55c8aadbad97e2ecbeb95821125fde822518d052f970a53ea67fd9a0dfef
+        url: https://github.com/fm-elpac/pmim-ibus/releases/download/v0.1.10/ui-vue-dist.tar.zst
+        sha256: 7310b3b43e73183ebfa7211e20c1be437ed8f7731be7e2e0d30fec91309301f6
       # pmim-ibus/pmim-plugin
       - type: archive
         dest: plugin
-        url: https://github.com/fm-elpac/pmim-ibus/releases/download/v0.1.9/pmim-plugin.tar.zst
-        sha256: 33e2eb21b18b6328507ba8a0f3e0d8985df990af97518ef2dbc10b2ecfd64a2d
+        url: https://github.com/fm-elpac/pmim-ibus/releases/download/v0.1.10/pmim-plugin.tar.zst
+        sha256: 116ce9097857797eb4664d3d4b423fa35be69a3f8b6d35cf81a5799e7fd88ad0
 
       # pmim-server
       - type: archive
@@ -115,48 +115,48 @@ modules:
       - type: archive
         dest: dist-deno
         only-arches: [ "x86_64" ]
-        url: https://github.com/denoland/deno/releases/download/v1.44.0/deno-x86_64-unknown-linux-gnu.zip
-        sha256: bb8fe2f89c2e46dec89094c99f865d993ca910ab782e473c5e3885483353340f
+        url: https://github.com/denoland/deno/releases/download/v1.45.3/deno-x86_64-unknown-linux-gnu.zip
+        sha256: 8102989679275f1c9859fd963ef407f60da0274337fbb75290b3e9df8174a30b
       - type: archive
         dest: dist-deno
         only-arches: [ "aarch64" ]
-        url: https://github.com/denoland/deno/releases/download/v1.44.0/deno-aarch64-unknown-linux-gnu.zip
-        sha256: 94a96aa9b6bed66f0bfbc172af95bf5031ca0ebc7e9660e9158b57239b2650e7
+        url: https://github.com/denoland/deno/releases/download/v1.45.3/deno-aarch64-unknown-linux-gnu.zip
+        sha256: a11932c65d60c128a64927236efcab79e849171ceb0a3dc200496a63053cff72
 
       # electronjs dist
       - type: file
         dest-filename: dist-electron.zip
         only-arches: [ "x86_64" ]
-        url: https://github.com/electron/electron/releases/download/v30.0.9/electron-v30.0.9-linux-x64.zip
-        sha256: f1d183d0ebe77bbee14a173118ef862eff8cf0eb28eca06209db32f0da1c66de
+        url: https://github.com/electron/electron/releases/download/v31.3.0/electron-v31.3.0-linux-x64.zip
+        sha256: f44e33a29019ce7f12a78d7dc376b467907f71936323feadae5a8ad932951856
       - type: file
         dest-filename: dist-electron.zip
         only-arches: [ "aarch64" ]
-        url: https://github.com/electron/electron/releases/download/v30.0.9/electron-v30.0.9-linux-arm64.zip
-        sha256: 6bd4844d3aaad3ecabc6935ee6e360937678f42ce5ffb1fb45dc1badf4358cc7
+        url: https://github.com/electron/electron/releases/download/v31.3.0/electron-v31.3.0-linux-arm64.zip
+        sha256: b860aa3cd3bc9640ff7d28e66968df26a61aae2553705b0753ee5ee3f20f6fad
 
       # ibrus
       - type: archive
         dest: dist-librush
         only-arches: [ "x86_64" ]
-        url: https://github.com/fm-elpac/librush/releases/download/v0.1.0-a7/librush_release_x86_64-unknown-linux-gnu.tar.zst
-        sha256: 95a6aaf304c0cfd28d965ad38e6c2257ffdcd5a51baf9d97a65c7edc4152424a
+        url: https://github.com/fm-elpac/librush/releases/download/v0.1.0/librush_release_x86_64-unknown-linux-gnu.tar.zst
+        sha256: 8af4ae4d927b3a2a88a8e8dbb4448bde0c384d509bc838c4aaeaabc24525906e
       - type: archive
         dest: dist-librush
         only-arches: [ "aarch64" ]
-        url: https://github.com/fm-elpac/librush/releases/download/v0.1.0-a7/librush_release_aarch64-unknown-linux-gnu.tar.zst
-        sha256: fa5b68e4f2af1e2b83d8056274b44794ba794acba9c96ed5efd57633c306bf61
+        url: https://github.com/fm-elpac/librush/releases/download/v0.1.0/librush_release_aarch64-unknown-linux-gnu.tar.zst
+        sha256: 439c170b9f74a979115b7b544334fbeaccc97fe79a33a286e1066e7897fa447b
 
       # pmim-data/pmim_sys-0.db.zst
       - type: file
         dest-filename: pmim_sys-0.db.zst
-        url: https://github.com/fm-elpac/pmim-data/releases/download/v0.1.4/pmim_sys-0.db.zst
-        sha256: e6581153321778a4d28d4d478e104cf0f26a76909b86fb8bd57ac8f26129a2c2
+        url: https://github.com/fm-elpac/pmim-data/releases/download/v0.1.5/pmim_sys-0.db.zst
+        sha256: e4d424c095c3bcbff2d0a9c2aa4bca6dde8185454d18d4c96fa058781a54ef60
 
       # pmim-data/pmim_sys.db.zst
       #- type: file
       #  dest-filename: pmim_sys.db.zst
-      #  url: https://github.com/fm-elpac/pmim-data/releases/download/v0.1.4/pmim_sys.db.zst
-      #  sha256: 68ef5436570e145c2c369e1de13107e469d25b5cac67f8050c9fd62b46b8d19b
+      #  url: https://github.com/fm-elpac/pmim-data/releases/download/v0.1.5/pmim_sys.db.zst
+      #  sha256: d18fdf53c20239d8e68071400550246644f6a3eb8fdd79b48c4c1a495d549172
 
 # TODO
