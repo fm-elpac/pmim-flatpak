@@ -1,10 +1,10 @@
 app-id: io.github.fm_elpac.pmim_ibus
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: "24.08"
 sdk: org.freedesktop.Sdk
 
 base: org.electronjs.Electron2.BaseApp
-base-version: '23.08'
+base-version: "24.08"
 separate-locales: false
 
 command: run.sh
@@ -46,13 +46,13 @@ modules:
       - install -Dm755 -t /app/bin/ dist-deno/deno
 
       - |
-        if [ "$FLATPAK_ARCH" == "x86_64" ]; then
-          install -Dm755 -t /app/bin/ dist-librush/release/ibrus
-        fi
+          if [ "$FLATPAK_ARCH" == "x86_64" ]; then
+            install -Dm755 -t /app/bin/ dist-librush/release/ibrus
+          fi
       - |
-        if [ "$FLATPAK_ARCH" == "aarch64" ]; then
-          install -Dm755 -t /app/bin/ dist-librush/aarch64-unknown-linux-gnu/release/ibrus
-        fi
+          if [ "$FLATPAK_ARCH" == "aarch64" ]; then
+            install -Dm755 -t /app/bin/ dist-librush/aarch64-unknown-linux-gnu/release/ibrus
+          fi
 
       - cp pmim-ibus/flatpak/pmim_ibrus.xml /app
 
@@ -91,19 +91,19 @@ modules:
       - type: git
         dest: pmim-ibus
         url: https://github.com/fm-elpac/pmim-ibus
-        tag: v0.1.10
-        commit: ee2de15ef8ee6a2812b2dc0503eb5e73cb6d006e
+        tag: v0.1.11
+        commit: 3880c98910745a536e620197e9049f3d76abe7c2
 
       # pmim-ibus/ui-vue-dist
       - type: archive
         dest: ui
-        url: https://github.com/fm-elpac/pmim-ibus/releases/download/v0.1.10/ui-vue-dist.tar.zst
-        sha256: 7310b3b43e73183ebfa7211e20c1be437ed8f7731be7e2e0d30fec91309301f6
+        url: https://github.com/fm-elpac/pmim-ibus/releases/download/v0.1.11/ui-vue-dist.tar.zst
+        sha256: 20bf249b033bfa9817ab86acc15b5c3582197785cdf45291766dfbe828cc2793
       # pmim-ibus/pmim-plugin
       - type: archive
         dest: plugin
-        url: https://github.com/fm-elpac/pmim-ibus/releases/download/v0.1.10/pmim-plugin.tar.zst
-        sha256: 116ce9097857797eb4664d3d4b423fa35be69a3f8b6d35cf81a5799e7fd88ad0
+        url: https://github.com/fm-elpac/pmim-ibus/releases/download/v0.1.11/pmim-plugin.tar.zst
+        sha256: 6526a223cca9cc36a10edc46c35b2f85bd757f64ee279c1277d40d9c27826a5d
 
       # pmim-server
       - type: archive
@@ -114,38 +114,38 @@ modules:
       # deno
       - type: archive
         dest: dist-deno
-        only-arches: [ "x86_64" ]
-        url: https://github.com/denoland/deno/releases/download/v1.45.3/deno-x86_64-unknown-linux-gnu.zip
-        sha256: 8102989679275f1c9859fd963ef407f60da0274337fbb75290b3e9df8174a30b
+        only-arches: ["x86_64"]
+        url: https://github.com/denoland/deno/releases/download/v1.46.3/deno-x86_64-unknown-linux-gnu.zip
+        sha256: 39bb1d21ad19c16fcb14f9d58fb542c2bccf0cd92c19aee8127ac5112b48bf83
       - type: archive
         dest: dist-deno
-        only-arches: [ "aarch64" ]
-        url: https://github.com/denoland/deno/releases/download/v1.45.3/deno-aarch64-unknown-linux-gnu.zip
-        sha256: a11932c65d60c128a64927236efcab79e849171ceb0a3dc200496a63053cff72
+        only-arches: ["aarch64"]
+        url: https://github.com/denoland/deno/releases/download/v1.46.3/deno-aarch64-unknown-linux-gnu.zip
+        sha256: acf7e0110e186fc515a1b7367d9c56a9f0205ad448c1c08ab769b8e3ce6f700f
 
       # electronjs dist
       - type: file
         dest-filename: dist-electron.zip
-        only-arches: [ "x86_64" ]
-        url: https://github.com/electron/electron/releases/download/v31.3.0/electron-v31.3.0-linux-x64.zip
-        sha256: f44e33a29019ce7f12a78d7dc376b467907f71936323feadae5a8ad932951856
+        only-arches: ["x86_64"]
+        url: https://github.com/electron/electron/releases/download/v35.0.3/electron-v35.0.3-linux-x64.zip
+        sha256: 44504bde889285d5798bd5921de87af492551ab1221be531a678dbb39ad58288
       - type: file
         dest-filename: dist-electron.zip
-        only-arches: [ "aarch64" ]
-        url: https://github.com/electron/electron/releases/download/v31.3.0/electron-v31.3.0-linux-arm64.zip
-        sha256: b860aa3cd3bc9640ff7d28e66968df26a61aae2553705b0753ee5ee3f20f6fad
+        only-arches: ["aarch64"]
+        url: https://github.com/electron/electron/releases/download/v35.0.3/electron-v35.0.3-linux-arm64.zip
+        sha256: b6068824cfe1f69add33320237cb994e2f9630fb568afa5c4dca6e6b74c6f6e0
 
       # ibrus
       - type: archive
         dest: dist-librush
-        only-arches: [ "x86_64" ]
-        url: https://github.com/fm-elpac/librush/releases/download/v0.1.0/librush_release_x86_64-unknown-linux-gnu.tar.zst
-        sha256: 8af4ae4d927b3a2a88a8e8dbb4448bde0c384d509bc838c4aaeaabc24525906e
+        only-arches: ["x86_64"]
+        url: https://github.com/fm-elpac/librush/releases/download/v0.2.1/librush_release_x86_64-unknown-linux-gnu.tar.zst
+        sha256: 1d6120fb6d8e1b7738afef6cf54012c467e97768936d3b3b758ed341a7d99bfa
       - type: archive
         dest: dist-librush
-        only-arches: [ "aarch64" ]
-        url: https://github.com/fm-elpac/librush/releases/download/v0.1.0/librush_release_aarch64-unknown-linux-gnu.tar.zst
-        sha256: 439c170b9f74a979115b7b544334fbeaccc97fe79a33a286e1066e7897fa447b
+        only-arches: ["aarch64"]
+        url: https://github.com/fm-elpac/librush/releases/download/v0.2.1/librush_release_aarch64-unknown-linux-gnu.tar.zst
+        sha256: 50ba709f1ce9d9ecc0746e69843d4c1e669557c3eeb7f58b447ba7f11dd80a1d
 
       # pmim-data/pmim_sys-0.db.zst
       - type: file
